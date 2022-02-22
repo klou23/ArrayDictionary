@@ -14,6 +14,7 @@ public class ArrayDictionary <E,T>{
     }
 
     public void put(E key, T value){
+        if(contains(key)) return;
         for(int i = 0; i < keys.size(); i++){
             if(keys.get(i) == null){
                 keys.set(i, key);
@@ -24,11 +25,12 @@ public class ArrayDictionary <E,T>{
         }
         keys.add(key);
         values.add(value);
+        size++;
     }
 
     public T get(E key){
         for(int i = 0; i < keys.size(); i++){
-            if(keys.get(i).equals(key)) return values.get(i);
+            if(keys.get(i) != null && keys.get(i).equals(key)) return values.get(i);
         }
         return null;
     }
@@ -48,7 +50,7 @@ public class ArrayDictionary <E,T>{
 
     public boolean contains(E key){
         for(int i = 0; i < keys.size(); i++){
-            if(keys.get(i).equals(key)) return true;
+            if(keys.get(i) != null && keys.get(i).equals(key)) return true;
         }
         return false;
     }
