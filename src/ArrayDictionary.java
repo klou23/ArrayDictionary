@@ -1,3 +1,10 @@
+/**
+ * ArrayDictionary.java
+ * Kevin Lou
+ * 2022/02/22
+ * A dictionary implementation using ArrayLists
+ */
+
 import java.util.ArrayList;
 import java.util.Collection;
 
